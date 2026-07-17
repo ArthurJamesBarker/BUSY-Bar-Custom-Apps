@@ -112,15 +112,13 @@ Install Python 3.10 or newer from
 
 ## Files included
 
-- `social_battery.py` — app behavior
-- `busybar_api.py` — release-firmware display connection
-- `busybar_ws_input.py` — physical dial and button input
+- `social_battery.py` — the complete app in one Python file
 - seven PNG files — the seven social-battery states
 - `requirements.txt` — Python packages
 - macOS and Windows launchers
 
-No hacked-firmware JavaScript, unused animation code, development logs, caches,
-or unrelated assets are included.
+No test folders, hacked-firmware JavaScript, unused animation code, development
+logs, caches, or unrelated assets are included.
 
 ## License
 
