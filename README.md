@@ -28,8 +28,8 @@ instructions.
 ## Safety and privacy
 
 - Apps communicate directly with your BUSY Bar over your local network.
-- Wi-Fi access passwords stay on your computer and should never be committed
-  to Git.
+- A protected Wi-Fi access password is sent directly to the BUSY Bar when
+  needed. It is not saved by the app.
 - These are community projects and are not official BUSY Bar applications.
 
 ## License

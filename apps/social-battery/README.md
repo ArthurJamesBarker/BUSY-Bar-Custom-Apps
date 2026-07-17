@@ -36,7 +36,9 @@ not already installed. On Windows, select **Add Python to PATH** during setup.
 4. Put the BUSY Bar in **Apps** mode.
 
 USB normally uses `10.0.4.20`. For Wi-Fi, use the IP address shown by your BUSY
-Bar.
+Bar. The password is sent directly to the BUSY Bar over the local Wi-Fi
+connection and is not saved by Social Battery. Only use a trusted Wi-Fi
+network.
 
 ## 3. Start Social Battery
 
@@ -93,7 +95,7 @@ the terminal. The app clears its artwork when it closes.
 
 - Check the USB cable or Wi-Fi connection.
 - Confirm the IP address.
-- Confirm the HTTP API is enabled.
+- For Wi-Fi, confirm HTTP API access is enabled.
 - Try the USB address `10.0.4.20`.
 
 ### The Wi-Fi access password is rejected
