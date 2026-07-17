@@ -28,7 +28,8 @@ instructions.
 ## Safety and privacy
 
 - Apps communicate directly with your BUSY Bar over your local network.
-- API keys stay on your computer and should never be committed to Git.
+- Wi-Fi access passwords stay on your computer and should never be committed
+  to Git.
 - These are community projects and are not official BUSY Bar applications.
 
 ## License

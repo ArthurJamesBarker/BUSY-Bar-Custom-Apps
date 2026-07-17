@@ -3,7 +3,7 @@
 Social Battery turns the BUSY Bar dial into a simple social-energy meter.
 Choose one of seven levels, from **critical** to **full**.
 
-![Social Battery full state](full.png)
+![Social Battery full state](assets/full.png)
 
 The app runs on your computer and sends the original 72×16 artwork to a BUSY
 Bar using its official release-firmware API. No modified firmware is needed.
@@ -30,9 +30,9 @@ not already installed. On Windows, select **Add Python to PATH** during setup.
 
 1. Connect the BUSY Bar to the computer by USB, or connect both devices to the
    same Wi-Fi network.
-2. On the BUSY Bar, open **Settings → Developer → HTTP API**.
-3. Enable the API. If you choose key-protected access, keep the displayed key
-   ready; Social Battery will ask for it.
+2. If using Wi-Fi, enable **HTTP API access** on the BUSY Bar.
+3. If that access is password-protected, keep the password ready; Social
+   Battery will ask for it. USB connections do not need this password.
 4. Put the BUSY Bar in **Apps** mode.
 
 USB normally uses `10.0.4.20`. For Wi-Fi, use the IP address shown by your BUSY
@@ -40,9 +40,11 @@ Bar.
 
 ## 3. Start Social Battery
 
+Open the **Start Here** folder, then choose your computer:
+
 ### macOS
 
-Double-click **Start Social Battery.command**.
+Double-click **macOS - Double-click to Start.command**.
 
 The first time, macOS may require you to right-click the file and select
 **Open**. Enter the BUSY Bar IP address when asked, or press Return to use the
@@ -50,7 +52,7 @@ USB default.
 
 ### Windows
 
-Double-click **Start Social Battery.bat**.
+Double-click **Windows - Double-click to Start.bat**.
 
 Enter the BUSY Bar IP address when asked, or press Enter to use the USB default.
 
@@ -94,10 +96,10 @@ the terminal. The app clears its artwork when it closes.
 - Confirm the HTTP API is enabled.
 - Try the USB address `10.0.4.20`.
 
-### The API key is rejected
+### The Wi-Fi access password is rejected
 
-Open **Settings → Developer → HTTP API** and enter the currently displayed key
-when prompted. Do not include spaces.
+Check the BUSY Bar's HTTP API access settings and enter its password when
+prompted. This password is only used for protected access over Wi-Fi.
 
 ### The dial does not respond
 
@@ -113,9 +115,9 @@ Install Python 3.10 or newer from
 ## Files included
 
 - `social_battery.py` — the complete app in one Python file
-- seven PNG files — the seven social-battery states
+- `assets` — the seven social-battery PNG images
 - `requirements.txt` — Python packages
-- macOS and Windows launchers
+- `Start Here` — clearly labelled macOS and Windows launchers
 
 No test folders, hacked-firmware JavaScript, unused animation code, development
 logs, caches, or unrelated assets are included.

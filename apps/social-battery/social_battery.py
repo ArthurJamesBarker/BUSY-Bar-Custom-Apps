@@ -19,6 +19,7 @@ from websocket import WebSocketTimeoutException, create_connection
 APP_ID = "social_battery"
 DEFAULT_HOST = "10.0.4.20"
 APP_DIR = Path(__file__).resolve().parent
+ASSET_DIR = APP_DIR / "assets"
 API_VERSION_HEADER = "X-Busy-Api-Version"
 DRAW_PRIORITY = 100
 
@@ -38,7 +39,12 @@ STATES = [
 
 
 class BusyBarClient:
-    def __init__(self, host: str, app_id: str, token: str | None = None) -> None:
+    def __init__(
+        self,
+        host: str,
+        app_id: str,
+        password: str | None = None,
+    ) -> None:
         clean_host = (
             host.strip()
             .replace("http://", "")
@@ -49,14 +55,14 @@ class BusyBarClient:
         self.api = f"http://{clean_host}/api"
         self.app_id = app_id
         self.session = requests.Session()
-        if token:
-            self.set_token(token)
+        if password:
+            self.set_password(password)
 
-    def set_token(self, token: str) -> None:
-        self.session.headers["X-API-Token"] = token
+    def set_password(self, password: str) -> None:
+        self.session.headers["X-API-Token"] = password
 
     @property
-    def has_token(self) -> bool:
+    def has_password(self) -> bool:
         return bool(self.session.headers.get("X-API-Token"))
 
     def connect(self) -> str:
@@ -71,12 +77,17 @@ class BusyBarClient:
         response.raise_for_status()
         return str(response.json().get("mode") or "").lower()
 
+    def transport_type(self) -> str:
+        response = self.session.get(f"{self.api}/transport", timeout=5)
+        response.raise_for_status()
+        return str(response.json().get("type") or "").lower()
+
     @property
     def ws_url(self) -> str:
         url = f"ws://{self.host}/api/status/ws"
-        token = self.session.headers.get("X-API-Token")
-        if token:
-            url += f"?x-api-token={token}"
+        password = self.session.headers.get("X-API-Token")
+        if password:
+            url += f"?x-api-token={password}"
         return url
 
     def upload_asset(self, path: Path, remote_name: str | None = None) -> None:
@@ -242,8 +253,13 @@ def stream_input_events(
 
 
 class SocialBattery:
-    def __init__(self, host: str, token: str | None, skip_upload: bool = False) -> None:
-        self.bar = BusyBarClient(host, APP_ID, token)
+    def __init__(
+        self,
+        host: str,
+        password: str | None,
+        skip_upload: bool = False,
+    ) -> None:
+        self.bar = BusyBarClient(host, APP_ID, password)
         self.skip_upload = skip_upload
         self.state_index = 3
         self.pending_steps: deque[int] = deque()
@@ -251,7 +267,7 @@ class SocialBattery:
         self.condition = threading.Condition()
 
     def _asset_paths(self) -> list[Path]:
-        return [APP_DIR / local_name for local_name, _ in STATES]
+        return [ASSET_DIR / local_name for local_name, _ in STATES]
 
     def _check_assets(self) -> None:
         missing = [path.name for path in self._asset_paths() if not path.is_file()]
@@ -261,22 +277,26 @@ class SocialBattery:
             )
 
     def _prepare_access(self) -> None:
+        if self.bar.transport_type() != "wifi":
+            return
+
         mode = self.bar.access_mode()
         if mode == "disabled":
             raise PermissionError(
-                "The BUSY Bar HTTP API is disabled. Enable it under "
-                "Settings → Developer → HTTP API."
+                "Wi-Fi access to the BUSY Bar HTTP API is disabled. "
+                "Enable HTTP API access on the BUSY Bar."
             )
-        if mode == "key" and not self.bar.has_token:
+        if mode == "key" and not self.bar.has_password:
             if not sys.stdin.isatty():
                 raise PermissionError(
-                    "This BUSY Bar requires an API key. Set BUSYBAR_TOKEN "
+                    "This BUSY Bar requires its Wi-Fi access password. "
+                    "Set BUSYBAR_PASSWORD "
                     "or run the app in a terminal."
                 )
-            token = getpass.getpass("BUSY Bar API key: ").strip()
-            if not token:
-                raise PermissionError("An API key is required.")
-            self.bar.set_token(token)
+            password = getpass.getpass("BUSY Bar Wi-Fi access password: ").strip()
+            if not password:
+                raise PermissionError("The Wi-Fi access password is required.")
+            self.bar.set_password(password)
 
     def _upload_assets(self) -> None:
         if self.skip_upload:
@@ -396,12 +416,19 @@ def parse_args() -> argparse.Namespace:
         help=f"BUSY Bar IP address (default: {DEFAULT_HOST})",
     )
     parser.add_argument(
-        "--token",
+        "--password",
         default=(
-            os.environ.get("BUSYBAR_TOKEN")
+            os.environ.get("BUSYBAR_PASSWORD")
+            or os.environ.get("BUSYBAR_TOKEN")
             or os.environ.get("BUSYBAR_API_KEY")
         ),
-        help="Optional API key; interactive runs prompt when needed",
+        help="Optional Wi-Fi access password; interactive runs prompt when needed",
+    )
+    parser.add_argument(
+        "--token",
+        dest="password",
+        default=argparse.SUPPRESS,
+        help=argparse.SUPPRESS,
     )
     parser.add_argument(
         "--skip-upload",
@@ -414,7 +441,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     try:
-        SocialBattery(args.host, args.token, args.skip_upload).run()
+        SocialBattery(args.host, args.password, args.skip_upload).run()
     except FileNotFoundError as error:
         raise SystemExit(f"Cannot start Social Battery: {error}") from error
     except PermissionError as error:
@@ -422,8 +449,8 @@ def main() -> None:
     except requests.HTTPError as error:
         if error.response is not None and error.response.status_code in (401, 403):
             raise SystemExit(
-                "The BUSY Bar rejected the API key. Check "
-                "Settings → Developer → HTTP API and try again."
+                "The BUSY Bar rejected the Wi-Fi access password. "
+                "Check the HTTP API settings and try again."
             ) from error
         raise SystemExit(f"BUSY Bar request failed: {error}") from error
     except requests.RequestException as error:
