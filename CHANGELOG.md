@@ -2,6 +2,7 @@
 
 ## 2026-08-09
 
+- Removed editor-specific `.cursor/` rules from the public repository.
 - Removed `Structure & Rules/` from the repository.
 - Added `apps/network/`: Internet Speed-style host app with UP/DOWN label
   artwork, live interface speeds, right-aligned values, Wi‑Fi password support,
@@ -11,4 +12,3 @@
   and draw/assets for any AI assistant.
 - Clarified that Apps mode is **not** required to start host widgets (Off mode
   is fine). Updated Social Battery README accordingly.
-- Added a Cursor rule for a single root `CHANGELOG.md`.
