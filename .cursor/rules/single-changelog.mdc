@@ -1,0 +1,11 @@
+---
+description: Keep a single root CHANGELOG.md — never add per-folder changelogs
+alwaysApply: true
+---
+
+# Single changelog
+
+- There is **one** changelog for this repo: root `CHANGELOG.md`.
+- Do **not** create or update `CHANGELOG.md` (or similar) inside `ai-lessons/`, `ai-skills/`, `apps/`, or any other subfolder.
+- When something changes, add a short entry only to the root `CHANGELOG.md`.
+- If you find extra changelogs in subfolders, remove them and merge useful notes into the root file.

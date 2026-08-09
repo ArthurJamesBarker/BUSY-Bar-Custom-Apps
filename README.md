@@ -13,6 +13,19 @@ custom or modified firmware is required.
 Turn the BUSY Bar dial to show your current social-energy level, from critical
 to full.
 
+### [Network](apps/network/)
+
+Show live download/upload speeds on the BUSY Bar with UP/DOWN label artwork.
+
+## AI lessons and skills
+
+Plain Markdown for any AI assistant:
+
+- Paste this into a chat: [ai-skills/BUSY-BAR-CORE.md](ai-skills/BUSY-BAR-CORE.md)
+- Skills: [ai-skills/](ai-skills/)
+- Longer lessons: [ai-lessons/](ai-lessons/)
+- How to use: [ai-lessons/00-use-with-any-ai.md](ai-lessons/00-use-with-any-ai.md)
+
 ## Before you start
 
 You need:

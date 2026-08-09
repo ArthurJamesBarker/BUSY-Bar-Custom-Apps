@@ -1,12 +1,13 @@
-# Social Battery
+# Network
 
-Social Battery turns the BUSY Bar dial into a simple social-energy meter.
-Choose one of seven levels, from **critical** to **full**.
+Network shows this computer’s live **download** and **upload** speeds on the
+BUSY Bar, next to UP/DOWN label artwork.
 
-![Social Battery full state](assets/full.png)
+The app runs on your computer and talks to a BUSY Bar using its official
+release-firmware API. No modified firmware is needed.
 
-The app runs on your computer and sends the original 72×16 artwork to a BUSY
-Bar using its official release-firmware API. No modified firmware is needed.
+**Note:** This measures traffic on a network interface on your computer (what
+is moving right now). It is not a separate “speed test to a distant server.”
 
 ## What you need
 
@@ -24,22 +25,21 @@ not already installed. On Windows, select **Add Python to PATH** during setup.
    [BUSY Bar Custom Apps repository](https://github.com/ArthurJamesBarker/BUSY-Bar-Custom-Apps).
 2. Select **Code**, then **Download ZIP**.
 3. Unzip the download.
-4. Open `apps`, then `social-battery`.
+4. Open `apps`, then `network`.
 
 ## 2. Prepare the BUSY Bar
 
 1. Connect the BUSY Bar to the computer by USB, or connect both devices to the
    same Wi-Fi network.
 2. If using Wi-Fi, enable **HTTP API access** on the BUSY Bar.
-3. If that access is password-protected, keep the password ready; Social
-   Battery will ask for it. USB connections do not need this password.
+3. If that access is password-protected, keep the password ready; Network will
+   ask for it. USB connections do not need this password.
 
 USB normally uses `10.0.4.20`. For Wi-Fi, use the IP address shown by your BUSY
 Bar. The password is sent directly to the BUSY Bar over the local Wi-Fi
-connection and is not saved by Social Battery. Only use a trusted Wi-Fi
-network.
+connection and is not saved by Network. Only use a trusted Wi-Fi network.
 
-## 3. Start Social Battery
+## 3. Start Network
 
 Open the **Start Here** folder, then choose your computer:
 
@@ -63,30 +63,40 @@ Open a terminal in this folder and run:
 
 ```bash
 python3 -m pip install -r requirements.txt
-python3 social_battery.py
+python3 network.py
 ```
 
 For a Wi-Fi BUSY Bar:
 
 ```bash
-python3 social_battery.py --host 192.168.1.123
+python3 network.py --host 192.168.1.123
 ```
 
 Replace `192.168.1.123` with the BUSY Bar's IP address.
 
-## Controls
+Optional Wi-Fi password without a prompt:
 
-- Turn the dial up or down: move one battery level per registered tick
-- Press **OK** or **Start**: move one level higher
-- Press **Back**: close Social Battery
-- Move away from **Apps** mode: close Social Battery
+```bash
+python3 network.py --host 192.168.1.123 --password YOUR_PASSWORD
+```
 
-The state stops at **critical** and **full**; it does not wrap around.
+To pick a specific network interface instead of auto:
+
+```bash
+python3 network.py --interface en0
+```
+
+## What you will see
+
+- Left: UP/DOWN label artwork
+- Right: live speeds, for example `48 Mb/s` (down) and `12 Mb/s` (up)
+
+Values refresh several times per second while the app is running.
 
 ## Stopping the app
 
-Press **Back** on the BUSY Bar, close the launcher window, or press `Ctrl+C` in
-the terminal. The app clears its artwork when it closes.
+Press `Ctrl+C` in the terminal or close the launcher window. The app clears its
+content from the BUSY Bar when it stops.
 
 ## Troubleshooting
 
@@ -102,10 +112,11 @@ the terminal. The app clears its artwork when it closes.
 Check the BUSY Bar's HTTP API access settings and enter its password when
 prompted. This password is only used for protected access over Wi-Fi.
 
-### The dial does not respond
+### Speeds stay at 0 Mb/s
 
-- Close any other computer app using the BUSY Bar status stream.
-- Stop and restart Social Battery.
+That usually means this computer is not sending or receiving much traffic on
+the selected interface. Open a download or upload and watch again, or pass
+`--interface` with another interface name.
 
 ### Python is not found
 
@@ -114,15 +125,7 @@ Install Python 3.10 or newer from
 
 ## Files included
 
-- `social_battery.py` — the complete app in one Python file
-- `assets` — the seven social-battery PNG images
-- `requirements.txt` — Python packages
-- `Start Here` — clearly labelled macOS and Windows launchers
-
-No test folders, hacked-firmware JavaScript, unused animation code, development
-logs, caches, or unrelated assets are included.
-
-## License
-
-Social Battery and its included artwork are available under the repository's
-[MIT License](../../LICENSE).
+- `network.py` — the complete app in one Python file
+- `Speed_down-up.png` — UP/DOWN label artwork for the front display
+- `requirements.txt` — Python packages used by the app
+- `Start Here` — double-click starters for macOS and Windows
