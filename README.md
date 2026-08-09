@@ -17,6 +17,10 @@ to full.
 
 Show live download/upload speeds on the BUSY Bar with UP/DOWN label artwork.
 
+### [Spotify](apps/spotify/)
+
+Show what’s playing on Spotify, with play/pause and skip from the BUSY Bar.
+
 ## AI lessons and skills
 
 Plain Markdown for any AI assistant:

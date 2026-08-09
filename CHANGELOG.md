@@ -2,6 +2,9 @@
 
 ## 2026-08-09
 
+- Added `apps/spotify/`: Now Playing host app with dial/button controls. Each
+  user supplies their own Spotify Developer credentials via `.env` (no shared
+  secrets in the repo).
 - Added `apps/network/`: host app with UP/DOWN label artwork, live interface
   speeds, right-aligned values, Wi‑Fi password support, and Start Here
   launchers.
