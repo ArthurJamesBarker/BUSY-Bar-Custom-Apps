@@ -7,3 +7,6 @@ venv/
 .cursor/
 .cache
 **/.cache
+
+# Local-only until ready for public release
+apps/spotify/

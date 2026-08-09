@@ -2,8 +2,8 @@
 
 ## 2026-08-09
 
-- Temporarily removed `apps/spotify/` from the public repo until it is ready
-  for community release.
+- Kept `apps/spotify/` local-only (gitignored) until it is ready for community
+  release.
 - Added `apps/network/`: host app with UP/DOWN label artwork, live interface
   speeds, right-aligned values, Wi‑Fi password support, and Start Here
   launchers.
