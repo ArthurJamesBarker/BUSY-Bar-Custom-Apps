@@ -1,11 +1,10 @@
 # BUSY Bar AI Lessons
 
-Up-to-date teaching materials for building apps and widgets against **official
-BUSY Bar release firmware**.
+Teaching materials for building apps and widgets against **official BUSY Bar
+release firmware**.
 
-These replace the older **BSB-AI Lessons** pack. That pack used outdated font
-names (`medium`, `big`), the old `app_id` field, and mixed up Wi-Fi passwords
-with cloud API tokens.
+These lessons use the current HTTP API (`application_name`, current font names,
+and separate Wi‑Fi password vs cloud API token guidance).
 
 ## Use with any AI
 

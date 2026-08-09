@@ -20,8 +20,8 @@ not already installed. On Windows, select **Add Python to PATH** during setup.
 
 ## 1. Download the app
 
-1. Open the main
-   [BUSY Bar Custom Apps repository](https://github.com/ArthurJamesBarker/BUSY-Bar-Custom-Apps).
+1. Open this repository on GitHub:
+   [BUSY-Bar-Custom-Apps](https://github.com/ArthurJamesBarker/BUSY-Bar-Custom-Apps).
 2. Select **Code**, then **Download ZIP**.
 3. Unzip the download.
 4. Open `apps`, then `social-battery`.
@@ -118,9 +118,6 @@ Install Python 3.10 or newer from
 - `assets` — the seven social-battery PNG images
 - `requirements.txt` — Python packages
 - `Start Here` — clearly labelled macOS and Windows launchers
-
-No test folders, hacked-firmware JavaScript, unused animation code, development
-logs, caches, or unrelated assets are included.
 
 ## License
 

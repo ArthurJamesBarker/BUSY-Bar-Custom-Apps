@@ -26,7 +26,7 @@ Upload:
 - optionally the matching skill under `ai-skills/busy-bar-*/SKILL.md`
 - optionally lessons from `ai-lessons/` for more detail
 
-## What to share with friends
+## What to share
 
-Share the whole repo, or just the `ai-skills/` folder. Tell them to paste
+Share this repository, or just the `ai-skills/` folder. Tell people to paste
 `BUSY-BAR-CORE.md` into their AI of choice.
