@@ -10,6 +10,7 @@ Works with any AI. Paste this file after `BUSY-BAR-CORE.md` when building an app
 Build **host apps**: code runs on the PC and drives official firmware over HTTP.
 Do not invent custom firmware requirements unless the user asks.
 Do **not** tell users they must enter Apps mode to start; Off mode is fine.
+Interactive host apps may still exit when the physical mode switch changes.
 
 ## Checklist
 
@@ -21,7 +22,7 @@ Do **not** tell users they must enter Apps mode to start; Off mode is fine.
 - [ ] Only current fonts used (see busy-bar-fonts)
 - [ ] Assets uploaded before image draw; path = filename only
 - [ ] clear on refresh/exit
-- [ ] Do not require Apps mode to start (Off mode is fine)
+- [ ] Do not require Apps mode to start (Off mode is fine; mode-switch change may stop interactive apps)
 - [ ] Beginner-friendly run steps if the user is non-technical
 ```
 

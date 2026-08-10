@@ -76,9 +76,9 @@ TypeScript: `@busy-app/busy-lib` / https://github.com/busy-app/busylib-ts
 ## Device mode
 
 Host widgets talk to the bar over HTTP. **Apps mode is not required** to start
-or run them. Off mode is fine. Do not tell users they must switch to Apps mode
-before launching a host script unless a specific app documents that for its own
-controls.
+them. Off mode is fine. Do not tell users they must switch to Apps mode before
+launching a host script. Interactive apps may still close when the physical
+mode switch moves to another position.
 
 ## Do not confuse with local AI URLs
 

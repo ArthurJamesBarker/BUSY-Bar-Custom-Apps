@@ -2,8 +2,9 @@
 
 ## 2026-08-10
 
-- Social Battery no longer closes when the BUSY Bar mode switch is not on Apps,
-  matching the docs that host widgets can run from Off mode.
+- Social Battery can start in Off mode, and closes only when the physical mode
+  switch moves to a different position (not merely because the bar is not in
+  Apps).
 
 ## 2026-08-09
 

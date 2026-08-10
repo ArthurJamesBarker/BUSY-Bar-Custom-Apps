@@ -264,6 +264,7 @@ class SocialBattery:
         self.pending_steps: deque[int] = deque()
         self.stop_event = threading.Event()
         self.condition = threading.Condition()
+        self._switch_position: int | None = None
 
     def _asset_paths(self) -> list[Path]:
         return [ASSET_DIR / local_name for local_name, _ in STATES]
@@ -324,8 +325,18 @@ class SocialBattery:
                 self._queue_step(-delta)
             return
 
-        # Mode-switch events are ignored: host widgets work in Off mode too.
+        # Remember the starting mode (Off is fine). Closing only when the
+        # physical mode switch moves to a different position.
         if kind == "switch":
+            position = int(event[1])
+            if self._switch_position is None:
+                self._switch_position = position
+                return
+            if position != self._switch_position:
+                print("BUSY Bar mode changed. Closing Social Battery.")
+                self.stop_event.set()
+                with self.condition:
+                    self.condition.notify_all()
             return
 
         if kind != "button":

@@ -77,16 +77,19 @@ Replace `192.168.1.123` with the BUSY Bar's IP address.
 ## Controls
 
 - Turn the dial up or down: move one battery level per registered tick
-- Press **OK** or **Start**: move one level higher
-- Press **Back**: close Social Battery
-- Move away from **Apps** mode: close Social Battery
+- Press **OK** or **Start**: move one level up
+- Press **Back**, or move the BUSY Bar mode switch: close the app
+
+You can start Social Battery in **Off** mode (Apps mode is not required).
+Moving the mode switch afterward stops the app.
 
 The state stops at **critical** and **full**; it does not wrap around.
 
 ## Stopping the app
 
-Press **Back** on the BUSY Bar, close the launcher window, or press `Ctrl+C` in
-the terminal. The app clears its artwork when it closes.
+Press **Back** on the BUSY Bar, move the mode switch, close the launcher
+window, or press `Ctrl+C` in the terminal. The app clears its artwork when it
+closes.
 
 ## Troubleshooting
 

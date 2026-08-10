@@ -80,6 +80,7 @@ Prefer `busylib` / `@busy-app/busy-lib` when writing code.
 
 **Device mode:** Apps mode is **not** required to start host widgets. Off mode
 is fine. Do not instruct users to enter Apps mode just to run `display/draw`.
+Interactive host apps may still exit when the physical mode switch moves.
 
 Never send Busy Bar API calls to `localhost:11434` (that is local AI, not the bar).
 
