@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-10
+
+- Social Battery no longer closes when the BUSY Bar mode switch is not on Apps,
+  matching the docs that host widgets can run from Off mode.
+
 ## 2026-08-09
 
 - Kept `apps/spotify/` local-only (gitignored) until it is ready for community

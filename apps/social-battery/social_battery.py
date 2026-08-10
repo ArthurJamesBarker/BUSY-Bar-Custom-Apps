@@ -25,7 +25,6 @@ DRAW_PRIORITY = 100
 
 BTN_OK, BTN_BACK, BTN_START = 0, 1, 2
 ACT_RELEASE = 1
-SW_APPS = 3
 
 STATES = [
     ("critical.png", "critical.png"),
@@ -325,12 +324,8 @@ class SocialBattery:
                 self._queue_step(-delta)
             return
 
+        # Mode-switch events are ignored: host widgets work in Off mode too.
         if kind == "switch":
-            if int(event[1]) != SW_APPS:
-                print("BUSY Bar left Apps mode. Closing Social Battery.")
-                self.stop_event.set()
-                with self.condition:
-                    self.condition.notify_all()
             return
 
         if kind != "button":
