@@ -30,6 +30,10 @@ OpenAPI UI: https://api.busy.app/busybar/docs or `http://10.0.4.20/docs`
 2. Draw → `POST /api/display/draw` with `application_name` + `elements`
 3. Clear / delete assets when done
 
+On-device JS apps use the **same** upload endpoint, plus
+`POST /api/storage/write` to create `/ext/apps_data/apps_menu/js_apps_enabled`.
+See `busy-bar-js-apps`.
+
 Prefer official clients:
 
 ```python
@@ -48,6 +52,8 @@ import { BusyBar } from '@busy-app/busy-lib';
 3. Do **not** require Apps mode to start host widgets; Off mode is fine.
 4. Match firmware OpenAPI for the bar’s version when unsure.
 5. For fonts/layout use `busy-bar-fonts`. For auth use `busy-bar-auth`.
+   For on-device JS apps (upload, Dev mode, Apps listing) use
+   `busy-bar-js-apps`.
 
 ## Longer lessons
 

@@ -25,7 +25,7 @@ not already installed. On Windows, select **Add Python to PATH** during setup.
    [BUSY-Bar-Custom-Apps](https://github.com/ArthurJamesBarker/BUSY-Bar-Custom-Apps).
 2. Select **Code**, then **Download ZIP**.
 3. Unzip the download.
-4. Open `apps`, then `network`.
+4. Open `Python Apps`, then `network`.
 
 ## 2. Prepare the BUSY Bar
 

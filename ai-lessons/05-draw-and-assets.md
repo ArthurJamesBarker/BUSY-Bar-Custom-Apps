@@ -63,9 +63,11 @@ Front icons: keep roughly ≤15×15 so text still fits.
 
 ### animation
 
-Use only real device `.anim` assets (or stock paths). Type name in current
-clients is often `"animation"` (check OpenAPI / busylib). Homemade zip bytes
-that are not converted with the official toolchain will 400 at draw time.
+Use only real device `.anim` assets (or stock paths). Current firmware needs
+**bicycle1** files. Older `bicycle0` files are accepted by the HTTP API but
+fail at play time (`AnimFile` error). Type name in current clients is often
+`"animation"` (check OpenAPI / busylib). Homemade zip bytes that are not
+converted with firmware `scripts/seq2anim.py` will not play.
 
 ### countdown
 
@@ -127,5 +129,6 @@ with BusyBar("10.0.4.20") as bb:
 
 ## Working example in this repo
 
-[`apps/social-battery/`](../apps/social-battery/) — host Python app, official
-firmware only, Wi-Fi password prompt when needed, seven 72×16 PNG states.
+[`Python Apps/social-battery/`](../Python%20Apps/social-battery/) — computer
+app, normal firmware, Wi-Fi password prompt when needed, seven 72×16 PNG
+states. On-bar example: [`apps/chess-clock/`](../apps/chess-clock/).

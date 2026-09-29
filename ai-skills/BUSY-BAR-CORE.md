@@ -82,6 +82,42 @@ Prefer `busylib` / `@busy-app/busy-lib` when writing code.
 is fine. Do not instruct users to enter Apps mode just to run `display/draw`.
 Interactive host apps may still exit when the physical mode switch moves.
 
+## Two kinds of apps
+
+| Kind | Where code runs | This repo today |
+|------|-----------------|-----------------|
+| Host widget | PC (Python / TypeScript) over HTTP | `Python Apps/` |
+| On-device JS app | On the bar (JerryScript) | `apps/*/on-device/` |
+
+On-device JS is **firmware-in-development**. Official docs still say the JS
+SDK is coming soon. Do not build JS-on-device apps unless the user has that
+firmware or asked for it. Host widgets remain the default.
+
+### JS app — put it on the bar
+
+1. Package: `/ext/user_assets/<id>/` with `appmeta/manifest.json` and
+   `scripts/main.js`. Folder name = `manifest.id`. No hyphens in `id`.
+2. Upload each file:
+   `POST /api/assets/upload?application_name=<id>&file=<relative-path>`
+3. Enable listing:
+   write `/ext/apps_data/apps_menu/js_apps_enabled` via
+   `POST /api/storage/write?path=/ext/apps_data/apps_menu/js_apps_enabled`
+4. Launch from **Apps → app → Start**.
+
+Icons: `appmeta/icon_front_8x8.png` (8×8 colour) and
+`appmeta/icon_back_11x11.png` (11×11 greyscale).
+
+`"debug": false` in the manifest so it shows without Dev mode.
+`"debug": true` apps stay hidden until **Settings → Debug → Dev mode → On**
+(or USB CLI `sysctl debug 1`).
+
+On-device scripts draw with `fetch("http://127.0.0.1/api/display/draw", …)`
+(loopback, no password). Full recipe: `ai-skills/busy-bar-js-apps/SKILL.md`.
+Example installer: `apps/chess-clock/install_on_bar.py`.
+Launcher **Setup** comes from `appmeta/settings.json`; saved values are at
+`/ext/apps_data/jsrunner/<id>.settings.json` (read with `/api/storage/read`).
+See `ai-lessons/07-setup-settings-and-launch.md`.
+
 Never send Busy Bar API calls to `localhost:11434` (that is local AI, not the bar).
 
 ## Minimal draw example
@@ -111,9 +147,12 @@ Never send Busy Bar API calls to `localhost:11434` (that is local AI, not the ba
 2. Follow current fonts and `application_name`.
 3. Keep front layouts simple; avoid overlap on 16px height.
 4. Give beginners short numbered steps and copy-paste commands.
-5. Do not require custom/modified firmware for normal widgets.
+5. Do not require custom/modified firmware for normal **host widgets**.
 6. Do **not** tell users they must enter Apps mode to start a host widget;
-   Off mode is fine.
+   Off mode is fine. Interactive apps may exit when the mode switch moves.
+   On-device JS apps *are* launched from Apps. After upload, also enable
+   `js_apps_enabled`. For `"debug": true` apps, turn **Dev mode** on
+   (Settings → Debug).
 7. Never put passwords or API tokens into git or committed files.
 
 ## Official links

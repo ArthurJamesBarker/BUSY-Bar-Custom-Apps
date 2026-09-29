@@ -12,6 +12,10 @@ Do not invent custom firmware requirements unless the user asks.
 Do **not** tell users they must enter Apps mode to start; Off mode is fine.
 Interactive host apps may still exit when the physical mode switch changes.
 
+Keep the app on the computer if it needs a PC login, browser login, or a live
+process on the computer (for example network speeds). Those stay in
+`Python Apps/`.
+
 ## Checklist
 
 ```
@@ -53,7 +57,8 @@ Interactive host apps may still exit when the physical mode switch changes.
 - `ai-skills/busy-bar-fonts/SKILL.md`
 - `ai-skills/busy-bar-http-api/SKILL.md`
 - `ai-lessons/README.md`
-- Example: `apps/social-battery/`
+- Example: `Python Apps/social-battery/`
+- On-device JS: `ai-skills/busy-bar-js-apps/SKILL.md` / `apps/`
 
 ## Output style for end users
 

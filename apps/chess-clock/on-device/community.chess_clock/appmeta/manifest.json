@@ -1,0 +1,10 @@
+{
+    "format_version": 1,
+    "id": "community.chess_clock",
+    "name": "Chess Clock",
+    "version": "0.1.6",
+    "description": "Two-player game clock",
+    "author": "Community",
+    "heap_size_kib": 256,
+    "debug": false
+}

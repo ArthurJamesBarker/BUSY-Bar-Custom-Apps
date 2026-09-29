@@ -24,9 +24,14 @@ Upload:
 
 - `ai-skills/BUSY-BAR-CORE.md`
 - optionally the matching skill under `ai-skills/busy-bar-*/SKILL.md`
+  (for on-device JS: `busy-bar-js-apps/SKILL.md`)
 - optionally lessons from `ai-lessons/` for more detail
 
 ## What to share
 
 Share this repository, or just the `ai-skills/` folder. Tell people to paste
 `BUSY-BAR-CORE.md` into their AI of choice.
+
+On-device apps live in `apps/`. Host Python widgets live in `Python Apps/`.
+For Setup menus and reading settings, also paste or open
+`ai-lessons/07-setup-settings-and-launch.md`.

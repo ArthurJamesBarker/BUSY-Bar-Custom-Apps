@@ -1,0 +1,24 @@
+{
+    "format_version": 1,
+    "version": 1,
+    "fields": {
+        "minutes": {
+            "label": "Minutes",
+            "description": "Time each player starts with",
+            "type": "integer",
+            "default": 5,
+            "min": 1,
+            "max": 180,
+            "step": 1
+        },
+        "increment": {
+            "label": "Increment",
+            "description": "Extra seconds added after each move",
+            "type": "integer",
+            "default": 0,
+            "min": 0,
+            "max": 180,
+            "step": 1
+        }
+    }
+}

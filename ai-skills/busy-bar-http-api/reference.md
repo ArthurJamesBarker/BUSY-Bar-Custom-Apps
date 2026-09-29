@@ -17,6 +17,8 @@
 | DELETE | `/api/display/draw` | Clear; filter by `application_name` when supported |
 | POST | `/api/assets/upload` | Query includes `application_name` + file name |
 | DELETE | `/api/assets/upload` | Wipe app assets |
+| POST | `/api/storage/mkdir` | Create a folder under `/ext/...` |
+| GET | `/api/storage/read` | Download a file under `/ext/...` |
 
 ## Minimal draw body
 
@@ -46,6 +48,10 @@
 ## Device mode
 
 Apps mode is **not** required to start host widgets. Off mode is fine.
+
+On-device JS apps **do** launch from Apps. After upload, also write
+`/ext/apps_data/apps_menu/js_apps_enabled`. `"debug": true` apps need
+**Settings → Debug → Dev mode → On**.
 
 ## Libraries
 

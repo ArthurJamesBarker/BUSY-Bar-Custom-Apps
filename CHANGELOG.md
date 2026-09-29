@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-29
+
+- Separated computer apps (`Python Apps/`) from on-bar apps (`apps/`).
+  Network and Social Battery moved into `Python Apps/` and still use normal
+  BUSY Bar firmware.
+- Added on-bar Chess Clock. It needs firmware with the JavaScript runner.
+  Official BUSY docs still say installing your own apps on the bar is coming
+  soon.
+- Updated the AI notes so they explain both kinds of apps.
+
 ## 2026-08-10
 
 - Social Battery can start in Off mode, and closes only when the physical mode

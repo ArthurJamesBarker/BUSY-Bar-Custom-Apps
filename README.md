@@ -1,21 +1,36 @@
 # BUSY Bar Custom Apps
 
-Community apps for the [BUSY Bar](https://busy.bar/) running official release
-firmware.
+Community apps for the [BUSY Bar](https://busy.bar/).
 
-Each app has its own folder with everything needed to install and run it. No
-custom or modified firmware is required.
+There are two kinds. They do not work the same way.
 
-## Available apps
+## Runs on your computer
 
-### [Social Battery](apps/social-battery/)
+Your computer stays connected and updates the bar. These work with normal
+BUSY Bar firmware. Leave the mode switch in **Off**.
 
-Turn the BUSY Bar dial to show your current social-energy level, from critical
-to full.
+| App | What it does |
+|-----|----------------|
+| [Network](Python%20Apps/network/) | Live download and upload speeds |
+| [Social Battery](Python%20Apps/social-battery/) | Dial to show your social-energy level |
 
-### [Network](apps/network/)
+These live in [`Python Apps/`](Python%20Apps/).
 
-Show live download/upload speeds on the BUSY Bar with UP/DOWN label artwork.
+## Runs on the bar
+
+Install once. After that the bar runs the app from **Apps**. The computer
+does not need to stay connected.
+
+| App | What it does |
+|-----|----------------|
+| [Chess Clock](apps/chess-clock/) | Two-player game clock. Set the times in **Setup**, then **Start** |
+
+These live in [`apps/`](apps/).
+
+**This kind needs extra firmware.** Official BUSY docs still say installing
+your own apps on the bar is coming soon. Chess Clock only shows up if your
+bar already has the JavaScript runner. If it does not, use a computer app
+above instead.
 
 ## AI lessons and skills
 
@@ -30,13 +45,12 @@ Plain Markdown for any AI assistant:
 
 You need:
 
-- a BUSY Bar with current release firmware;
+- a BUSY Bar;
 - a Windows, macOS, or Linux computer;
 - Python 3.10 or newer;
 - either a USB connection or the BUSY Bar's Wi-Fi IP address.
 
-Open an app's folder and follow its README. Each app includes beginner-friendly
-instructions.
+Open an app's folder and follow its README.
 
 ## Safety and privacy
 
