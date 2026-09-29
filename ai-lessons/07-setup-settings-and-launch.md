@@ -105,4 +105,4 @@ with the background full-bleed behind them.
 
 - [06-js-apps-on-device.md](06-js-apps-on-device.md)
 - `ai-skills/busy-bar-js-apps/SKILL.md`
-- Example: `apps/chess-clock/`
+- Examples: `apps/chess-clock/`, `apps/Dice/`, `apps/social-battery/`

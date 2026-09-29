@@ -8,6 +8,11 @@ Choose one of seven levels, from **critical** to **full**.
 The app runs on your computer and sends the original 72×16 artwork to a BUSY
 Bar using its official release-firmware API. No modified firmware is needed.
 
+There is also an on-bar version in
+[`apps/social-battery/`](../../apps/social-battery/). That one stays on the
+bar after install, but it needs firmware with the JavaScript runner. This
+folder is the version that works on normal firmware.
+
 ## What you need
 
 - BUSY Bar with current release firmware

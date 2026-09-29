@@ -10,7 +10,7 @@ This is a different kind of app from the Python host widgets.
 Official docs still say the JS SDK is coming soon. This is for firmware that
 already has a JS runner.
 
-Worked example: Chess Clock under `apps/chess-clock/on-device/`.
+Worked examples: Chess Clock, Dice, and Social Battery under `apps/`.
 
 ## When to use which
 
@@ -25,8 +25,11 @@ app to live on the bar after a one-time install.
 ```
 apps/                         on-bar JS apps
   chess-clock/on-device/community.chess_clock/
+  Dice/on-device/community.dice/
+  social-battery/on-device/community.social_battery/
 Python Apps/                  computer apps (normal firmware)
   network/  social-battery/
+scripts/install_js_app.py     shared uploader used by Dice and Social Battery
 ```
 
 ## Package

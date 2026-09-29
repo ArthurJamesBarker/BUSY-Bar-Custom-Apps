@@ -1,0 +1,15 @@
+{
+    "format_version": 1,
+    "version": 1,
+    "fields": {
+        "dice_count": {
+            "label": "Dice",
+            "description": "How many dice to roll side by side",
+            "type": "integer",
+            "default": 1,
+            "min": 1,
+            "max": 4,
+            "step": 1
+        }
+    }
+}

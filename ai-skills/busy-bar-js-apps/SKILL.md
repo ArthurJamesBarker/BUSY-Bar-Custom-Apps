@@ -14,12 +14,15 @@ JS apps.
 
 Host widgets in this repo still run on the PC. JS apps run **on the bar**.
 
-Worked example:
+Worked examples:
 
 - Chess Clock: `apps/chess-clock/on-device/community.chess_clock/`
+- Dice: `apps/Dice/on-device/community.dice/`
+- Social Battery: `apps/social-battery/on-device/community.social_battery/`
 
-Computer apps live under `Python Apps/` (Network, Social Battery). Each on-bar
-app has its own `install_on_bar.py`.
+Computer apps live under `Python Apps/` (Network, and a computer Social
+Battery). Chess Clock’s installer is self-contained. Dice and Social Battery
+use `scripts/install_js_app.py`.
 
 Apps that need a live process on the computer, such as network speeds, stay
 computer apps.

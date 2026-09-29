@@ -1,0 +1,10 @@
+{
+    "format_version": 1,
+    "id": "community.dice",
+    "name": "Dice",
+    "version": "0.1.12",
+    "description": "Roll dice on the front matrix",
+    "author": "Community",
+    "heap_size_kib": 256,
+    "debug": false
+}

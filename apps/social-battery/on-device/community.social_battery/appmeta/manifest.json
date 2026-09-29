@@ -1,0 +1,10 @@
+{
+    "format_version": 1,
+    "id": "community.social_battery",
+    "name": "Social Battery",
+    "version": "0.1.4",
+    "description": "Show your social energy on the bar",
+    "author": "Community",
+    "heap_size_kib": 192,
+    "debug": false
+}

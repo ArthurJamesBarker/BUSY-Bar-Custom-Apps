@@ -2,6 +2,9 @@
 
 ## 2026-09-29
 
+- Added on-bar Dice and on-bar Social Battery. Same firmware note as Chess
+  Clock: they need the JavaScript runner. The computer Social Battery is
+  unchanged.
 - Separated computer apps (`Python Apps/`) from on-bar apps (`apps/`).
   Network and Social Battery moved into `Python Apps/` and still use normal
   BUSY Bar firmware.

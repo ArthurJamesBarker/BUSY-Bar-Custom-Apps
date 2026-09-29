@@ -12,7 +12,7 @@ BUSY Bar firmware. Leave the mode switch in **Off**.
 | App | What it does |
 |-----|----------------|
 | [Network](Python%20Apps/network/) | Live download and upload speeds |
-| [Social Battery](Python%20Apps/social-battery/) | Dial to show your social-energy level |
+| [Social Battery](Python%20Apps/social-battery/) | Dial to show your social-energy level. Your computer stays connected |
 
 These live in [`Python Apps/`](Python%20Apps/).
 
@@ -24,13 +24,15 @@ does not need to stay connected.
 | App | What it does |
 |-----|----------------|
 | [Chess Clock](apps/chess-clock/) | Two-player game clock. Set the times in **Setup**, then **Start** |
+| [Dice](apps/Dice/) | Roll 1–4 dice. Pick the count in **Setup** |
+| [Social Battery](apps/social-battery/) | Dial seven energy levels. The bar remembers the last one |
 
 These live in [`apps/`](apps/).
 
 **This kind needs extra firmware.** Official BUSY docs still say installing
-your own apps on the bar is coming soon. Chess Clock only shows up if your
-bar already has the JavaScript runner. If it does not, use a computer app
-above instead.
+your own apps on the bar is coming soon. They only show up if your bar already
+has the JavaScript runner. If it does not, use a computer app above instead.
+Social Battery has both versions.
 
 ## AI lessons and skills
 
