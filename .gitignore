@@ -9,9 +9,9 @@ venv/
 **/.cache
 
 # Local-only until ready for public release
-Python Apps/spotify/
+On your computer/Spotify/
 
 # Spotify secrets / login cache (on-device login helper)
-apps/spotify/.env
-apps/spotify/.cache
+On the bar/Spotify/.env
+On the bar/Spotify/.cache
 

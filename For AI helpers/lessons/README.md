@@ -3,10 +3,10 @@
 Markdown for building against **official release firmware**, plus on-device JS
 when the bar has a JS runner.
 
-**Folders:** [`apps/`](../apps/) = on-device · [`Python Apps/`](../Python%20Apps/) = host
+**Folders:** [`On the bar`](../../On%20the%20bar/) = on the bar · [`On your computer`](../../On%20your%20computer/) = on the computer
 
 **Start:** [00-use-with-any-ai.md](00-use-with-any-ai.md) · paste
-[`BUSY-BAR-CORE.md`](../ai-skills/BUSY-BAR-CORE.md)
+[`BUSY-BAR-CORE.md`](../skills/BUSY-BAR-CORE.md)
 
 | Lesson | Topic |
 |--------|--------|

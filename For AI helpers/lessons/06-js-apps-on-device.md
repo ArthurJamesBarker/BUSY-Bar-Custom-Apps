@@ -2,20 +2,20 @@
 
 This is a different kind of app from the Python host widgets.
 
-- **Host widget** (`Python Apps/`): code runs on your computer and talks to
+- **Host widget** (`On your computer/`): code runs on your computer and talks to
   the bar over HTTP.
-- **JS app** (`apps/`): you upload files **onto the bar**. The bar runs the
+- **JS app** (`On the bar/`): you upload files **onto the bar**. The bar runs the
   JavaScript itself, and the app shows up in the Apps menu.
 
 Official docs still say the JS SDK is coming soon. This is for firmware that
 already has a JS runner.
 
-Worked examples: Chess Clock, Dice, and Social Battery under `apps/`.
+Worked examples: Chess Clock, Dice, and Social Battery under `On the bar/`.
 
 ## When to use which
 
 Use a **host widget** if you want the current public path, or the computer
-must do the work (live network stats, Spotify).
+must do the work (live network stats).
 
 Use an **on-device JS app** if the user has JS-runner firmware and wants the
 app to live on the bar after a one-time install.
@@ -23,13 +23,14 @@ app to live on the bar after a one-time install.
 ## Repo layout
 
 ```
-apps/                         on-bar JS apps
-  chess-clock/on-device/community.chess_clock/
+On the bar/                  apps that stay on the bar
+  Chess Clock/on-device/community.chess_clock/
   Dice/on-device/community.dice/
-  social-battery/on-device/community.social_battery/
-Python Apps/                  computer apps (normal firmware)
-  network/  social-battery/
-scripts/install_js_app.py     shared uploader used by Dice and Social Battery
+  Social Battery/on-device/community.social_battery/
+  Install helper/install_js_app.py
+On your computer/             apps that stay on the computer
+  Network/  Social Battery/
+For AI helpers/               lessons and skills
 ```
 
 ## Package
@@ -64,7 +65,7 @@ DELETE /api/assets/upload?application_name=<id>   # wipe before re-install
 Body = raw file bytes. Shared helper:
 
 ```bash
-cd apps/chess-clock
+cd "On the bar/Chess Clock"
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -126,4 +127,4 @@ frame may flash and dump you back to the launcher.
 
 Next: [07-setup-settings-and-launch.md](07-setup-settings-and-launch.md).
 
-Skill detail: `ai-skills/busy-bar-js-apps/SKILL.md`.
+Skill detail: `For AI helpers/skills/busy-bar-js-apps/SKILL.md`.

@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-ANIM_DIR = ROOT / "Animations"
+ANIM_DIR = ROOT / "Animation files"
 ON_DEVICE_DIR = ROOT / "on-device" / "community.dice" / "animations"
 FPS = 60
 FRAMES_PER_ROLL = 180

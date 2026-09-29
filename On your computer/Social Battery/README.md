@@ -8,7 +8,7 @@ Your computer must stay connected. Leave the mode switch on **Off**. This
 works on a normal BUSY Bar.
 
 There is also a version that stays on the bar:
-[Social Battery on the bar](../../apps/social-battery/). That one needs the
+[Social Battery on the bar](../../On%20the%20bar/Social%20Battery/). That one needs the
 JavaScript runner. Use this folder if the bar does not have that.
 
 ## Start

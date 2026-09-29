@@ -129,6 +129,6 @@ with BusyBar("10.0.4.20") as bb:
 
 ## Working example in this repo
 
-[`Python Apps/social-battery/`](../Python%20Apps/social-battery/) — computer
+[`On your computer/Social Battery/`](../../On%20your%20computer/Social%20Battery/) — computer
 app, normal firmware, Wi-Fi password prompt when needed, seven 72×16 PNG
-states. On-bar example: [`apps/chess-clock/`](../apps/chess-clock/).
+states. On-bar example: [`On the bar/Chess Clock/`](../../On%20the%20bar/Chess%20Clock/).

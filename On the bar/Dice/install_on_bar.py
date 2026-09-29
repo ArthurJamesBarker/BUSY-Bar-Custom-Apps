@@ -4,8 +4,8 @@
 from pathlib import Path
 import sys
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "scripts"))
+HELPER = Path(__file__).resolve().parents[1] / "Install helper"
+sys.path.insert(0, str(HELPER))
 
 from install_js_app import run_package  # noqa: E402
 

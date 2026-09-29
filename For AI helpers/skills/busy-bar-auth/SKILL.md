@@ -45,4 +45,4 @@ a cloud API token as `X-API-Token` on the LAN.
 
 ## Longer lesson
 
-See `ai-lessons/02-auth-password-vs-api-token.md` in this repository.
+See `For AI helpers/lessons/02-auth-password-vs-api-token.md` in this repository.

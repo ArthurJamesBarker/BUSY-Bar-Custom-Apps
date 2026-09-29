@@ -14,7 +14,7 @@ Interactive host apps may still exit when the physical mode switch changes.
 
 Keep the app on the computer if it needs a PC login, browser login, or a live
 process on the computer (for example network speeds). Those stay in
-`Python Apps/`.
+`On your computer/`.
 
 ## Checklist
 
@@ -52,13 +52,13 @@ process on the computer (for example network speeds). Those stay in
 
 ## Related files in this repo
 
-- `ai-skills/BUSY-BAR-CORE.md`
-- `ai-skills/busy-bar-auth/SKILL.md`
-- `ai-skills/busy-bar-fonts/SKILL.md`
-- `ai-skills/busy-bar-http-api/SKILL.md`
-- `ai-lessons/README.md`
-- Example: `Python Apps/social-battery/`
-- On-device JS: `ai-skills/busy-bar-js-apps/SKILL.md` / `apps/`
+- `For AI helpers/skills/BUSY-BAR-CORE.md`
+- `For AI helpers/skills/busy-bar-auth/SKILL.md`
+- `For AI helpers/skills/busy-bar-fonts/SKILL.md`
+- `For AI helpers/skills/busy-bar-http-api/SKILL.md`
+- `For AI helpers/lessons/README.md`
+- Example: `On your computer/Social Battery/`
+- On-device JS: `For AI helpers/skills/busy-bar-js-apps/SKILL.md` / `On the bar/`
 
 ## Output style for end users
 

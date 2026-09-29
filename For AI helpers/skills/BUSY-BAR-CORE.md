@@ -86,8 +86,8 @@ Interactive host apps may still exit when the physical mode switch moves.
 
 | Kind | Where code runs | This repo today |
 |------|-----------------|-----------------|
-| Host widget | PC (Python / TypeScript) over HTTP | `Python Apps/` |
-| On-device JS app | On the bar (JerryScript) | `apps/*/on-device/` |
+| Host widget | PC (Python / TypeScript) over HTTP | `On your computer/` |
+| On-device JS app | On the bar (JerryScript) | `On the bar/*/on-device/` |
 
 On-device JS is **firmware-in-development**. Official docs still say the JS
 SDK is coming soon. Do not build JS-on-device apps unless the user has that
@@ -112,11 +112,11 @@ Icons: `appmeta/icon_front_8x8.png` (8×8 colour) and
 (or USB CLI `sysctl debug 1`).
 
 On-device scripts draw with `fetch("http://127.0.0.1/api/display/draw", …)`
-(loopback, no password). Full recipe: `ai-skills/busy-bar-js-apps/SKILL.md`.
-Example installer: `apps/chess-clock/install_on_bar.py`.
+(loopback, no password). Full recipe: `For AI helpers/skills/busy-bar-js-apps/SKILL.md`.
+Example installer: `On the bar/Chess Clock/install_on_bar.py`.
 Launcher **Setup** comes from `appmeta/settings.json`; saved values are at
 `/ext/apps_data/jsrunner/<id>.settings.json` (read with `/api/storage/read`).
-See `ai-lessons/07-setup-settings-and-launch.md`.
+See `For AI helpers/lessons/07-setup-settings-and-launch.md`.
 
 Never send Busy Bar API calls to `localhost:11434` (that is local AI, not the bar).
 
