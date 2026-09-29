@@ -1,66 +1,85 @@
 # BUSY Bar Custom Apps
 
-Community apps for the [BUSY Bar](https://busy.bar/).
+Small apps for the [BUSY Bar](https://busy.bar/).
 
-There are two kinds. They do not work the same way.
+You do not need to know how to code. You do not need anything called Python
+already. The double-click files set that up. If a window says Python is
+missing, install the free program from
+[python.org](https://www.python.org/downloads/), then double-click the file
+again. On Windows, tick **Add python.exe to PATH** while installing.
 
-## Runs on your computer
+## Two kinds of apps
 
-Your computer stays connected and updates the bar. These work with normal
-BUSY Bar firmware. Leave the mode switch in **Off**.
+**The computer stays connected.** These work on a normal BUSY Bar. Leave the
+mode switch on **Off**.
 
-| App | What it does |
-|-----|----------------|
-| [Network](Python%20Apps/network/) | Live download and upload speeds |
-| [Social Battery](Python%20Apps/social-battery/) | Dial to show your social-energy level. Your computer stays connected |
+| App | Folder | What it does |
+|-----|--------|----------------|
+| [Network](Python%20Apps/network/) | `Python Apps/network` | Shows this computer’s download and upload speed |
+| [Social Battery](Python%20Apps/social-battery/) | `Python Apps/social-battery` | Dial to show how social you feel |
 
-These live in [`Python Apps/`](Python%20Apps/).
+**The app stays on the bar.** Install once. Then open it from **Apps** on the
+bar. The computer can be unplugged after that.
 
-## Runs on the bar
+| App | Folder | What it does |
+|-----|--------|----------------|
+| [Chess Clock](apps/chess-clock/) | `apps/chess-clock` | Two-player timer |
+| [Dice](apps/Dice/) | `apps/Dice` | Roll 1 to 4 dice |
+| [Social Battery](apps/social-battery/) | `apps/social-battery` | Same idea as above, but it stays on the bar |
 
-Install once. After that the bar runs the app from **Apps**. The computer
-does not need to stay connected.
+These three need a bar that already has a **JavaScript runner**. BUSY’s own
+site still says putting your own apps on the bar is coming soon. If the app
+never shows up in **Apps**, the bar does not have that yet. Use a computer app
+instead. Social Battery is in both lists so you can pick the one that works.
 
-| App | What it does |
-|-----|----------------|
-| [Chess Clock](apps/chess-clock/) | Two-player game clock. Set the times in **Setup**, then **Start** |
-| [Dice](apps/Dice/) | Roll 1–4 dice. Pick the count in **Setup** |
-| [Social Battery](apps/social-battery/) | Dial seven energy levels. The bar remembers the last one |
+## How to start
 
-These live in [`apps/`](apps/).
+1. On this GitHub page, click the green **Code** button, then **Download ZIP**.
+2. Unzip the download.
+3. Open the folder named in the table above.
+4. Open **Start Here**.
+5. Mac: double-click the file that says **macOS**. The first time, you may
+   need to right-click it and choose **Open**.
+6. Windows: double-click the file that says **Windows**.
+7. When it asks for the BUSY Bar address, press Return if the bar is plugged
+   in with USB. That address is `10.0.4.20`.
+8. On Wi-Fi, type the address shown on the bar. If it asks for a password,
+   that is the bar’s HTTP API password. It is sent only to the bar and is not
+   saved.
 
-**This kind needs extra firmware.** Official BUSY docs still say installing
-your own apps on the bar is coming soon. They only show up if your bar already
-has the JavaScript runner. If it does not, use a computer app above instead.
-Social Battery has both versions.
+For an app that stays on the bar: after the window says it is installed, turn
+the mode switch to **Apps**, pick the app, and press **Start**.
 
-## AI lessons and skills
+## If something goes wrong
 
-Plain Markdown for any AI assistant:
+- **Python is missing or too old.** Install it from the link at the top, then
+  double-click the file again.
+- **The bar cannot be reached.** Check the cable or Wi-Fi, and try `10.0.4.20`
+  if the bar is plugged in.
+- **The password is rejected.** Check HTTP API access on the bar, and type
+  that password again.
+- **An on-bar app never appears.** The bar does not have the JavaScript runner
+  yet.
 
-- Paste this into a chat: [ai-skills/BUSY-BAR-CORE.md](ai-skills/BUSY-BAR-CORE.md)
-- Skills: [ai-skills/](ai-skills/)
-- Longer lessons: [ai-lessons/](ai-lessons/)
-- How to use: [ai-lessons/00-use-with-any-ai.md](ai-lessons/00-use-with-any-ai.md)
+## Linux
 
-## Before you start
+The double-click files are for Mac and Windows. On Linux, open Terminal in the
+app folder and run:
 
-You need:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-- a BUSY Bar;
-- a Windows, macOS, or Linux computer;
-- Python 3.10 or newer;
-- either a USB connection or the BUSY Bar's Wi-Fi IP address.
+Then run `python3 network.py` or `python3 social_battery.py` for a computer
+app, or `python3 install_on_bar.py` for an app that stays on the bar. Add
+`--host 10.0.4.20` when the bar is plugged in with USB.
 
-Open an app's folder and follow its README.
+## For people building apps
 
-## Safety and privacy
+Notes for an AI assistant are in [ai-skills/BUSY-BAR-CORE.md](ai-skills/BUSY-BAR-CORE.md).
+Lessons are in [ai-lessons/](ai-lessons/).
 
-- Apps communicate directly with your BUSY Bar over your local network.
-- A protected Wi-Fi access password is sent directly to the BUSY Bar when
-  needed. It is not saved by the app.
-- These are community projects and are not official BUSY Bar applications.
-
-## License
-
-Code and included artwork are released under the [MIT License](LICENSE).
+These are community projects, not official BUSY apps. The license is
+[MIT](LICENSE).

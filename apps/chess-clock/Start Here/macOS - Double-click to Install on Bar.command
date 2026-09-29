@@ -3,16 +3,18 @@
 cd "$(dirname "$0")/.." || exit 1
 
 if ! command -v python3 >/dev/null 2>&1; then
-  echo "Python 3 is not installed."
-  echo "Download it from: https://www.python.org/downloads/"
+  echo "This needs a free program called Python. It is not on this computer yet."
+  echo "Install it from: https://www.python.org/downloads/"
+  echo "Then double-click this file again."
   echo
   read "reply?Press Return to close."
   exit 1
 fi
 
 if ! python3 -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 10) else 1)'; then
-  echo "Chess Clock requires Python 3.10 or newer."
-  echo "Download it from: https://www.python.org/downloads/"
+  echo "Python is installed, but it is too old."
+  echo "Install Python 3.10 or newer from: https://www.python.org/downloads/"
+  echo "Then double-click this file again."
   echo
   read "reply?Press Return to close."
   exit 1

@@ -4,9 +4,10 @@ cd /d "%~dp0.."
 
 where py >nul 2>nul
 if errorlevel 1 (
-  echo Python 3 is not installed.
-  echo Download it from: https://www.python.org/downloads/
-  echo Select "Add Python to PATH" during installation.
+  echo This needs a free program called Python. It is not on this computer yet.
+  echo Install it from: https://www.python.org/downloads/
+  echo While installing, tick Add python.exe to PATH.
+  echo Then double-click this file again.
   echo.
   pause
   exit /b 1
@@ -14,8 +15,10 @@ if errorlevel 1 (
 
 py -3 -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 10) else 1)"
 if errorlevel 1 (
-  echo Network requires Python 3.10 or newer.
-  echo Download it from: https://www.python.org/downloads/
+  echo Python is installed, but it is too old.
+  echo Install Python 3.10 or newer from: https://www.python.org/downloads/
+  echo While installing, tick Add python.exe to PATH.
+  echo Then double-click this file again.
   echo.
   pause
   exit /b 1

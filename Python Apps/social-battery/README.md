@@ -1,133 +1,26 @@
-# Social Battery
+# Social Battery (on your computer)
 
-Social Battery turns the BUSY Bar dial into a simple social-energy meter.
-Choose one of seven levels, from **critical** to **full**.
+Turn the dial to show how social you feel, from **critical** to **full**.
 
-![Social Battery full state](assets/full.png)
+![Social Battery full](assets/full.png)
 
-The app runs on your computer and sends the original 72×16 artwork to a BUSY
-Bar using its official release-firmware API. No modified firmware is needed.
+Your computer must stay connected. Leave the mode switch on **Off**. This
+works on a normal BUSY Bar.
 
-There is also an on-bar version in
-[`apps/social-battery/`](../../apps/social-battery/). That one stays on the
-bar after install, but it needs firmware with the JavaScript runner. This
-folder is the version that works on normal firmware.
+There is also a version that stays on the bar:
+[Social Battery on the bar](../../apps/social-battery/). That one needs the
+JavaScript runner. Use this folder if the bar does not have that.
 
-## What you need
+## Start
 
-- BUSY Bar with current release firmware
-- Windows, macOS, or Linux computer
-- Python 3.10 or newer
-- USB or Wi-Fi connection to the BUSY Bar
-
-Download Python from [python.org](https://www.python.org/downloads/) if it is
-not already installed. On Windows, select **Add Python to PATH** during setup.
-
-## 1. Download the app
-
-1. Open this repository on GitHub:
-   [BUSY-Bar-Custom-Apps](https://github.com/ArthurJamesBarker/BUSY-Bar-Custom-Apps).
-2. Select **Code**, then **Download ZIP**.
-3. Unzip the download.
-4. Open `Python Apps`, then `social-battery`.
-
-## 2. Prepare the BUSY Bar
-
-1. Connect the BUSY Bar to the computer by USB, or connect both devices to the
-   same Wi-Fi network.
-2. If using Wi-Fi, enable **HTTP API access** on the BUSY Bar.
-3. If that access is password-protected, keep the password ready; Social
-   Battery will ask for it. USB connections do not need this password.
-
-USB normally uses `10.0.4.20`. For Wi-Fi, use the IP address shown by your BUSY
-Bar. The password is sent directly to the BUSY Bar over the local Wi-Fi
-connection and is not saved by Social Battery. Only use a trusted Wi-Fi
-network.
-
-## 3. Start Social Battery
-
-Open the **Start Here** folder, then choose your computer:
-
-### macOS
-
-Double-click **macOS - Double-click to Start.command**.
-
-The first time, macOS may require you to right-click the file and select
-**Open**. Enter the BUSY Bar IP address when asked, or press Return to use the
-USB default.
-
-### Windows
-
-Double-click **Windows - Double-click to Start.bat**.
-
-Enter the BUSY Bar IP address when asked, or press Enter to use the USB default.
-
-### Linux or manual start
-
-Open a terminal in this folder and run:
-
-```bash
-python3 -m pip install -r requirements.txt
-python3 social_battery.py
-```
-
-For a Wi-Fi BUSY Bar:
-
-```bash
-python3 social_battery.py --host 192.168.1.123
-```
-
-Replace `192.168.1.123` with the BUSY Bar's IP address.
+Open **Start Here** and double-click the Mac or Windows file. The
+[main instructions](../../README.md) explain the address, password, and what
+to do if Python is missing.
 
 ## Controls
 
-- Turn the dial up or down: move one battery level per registered tick
-- Press **OK** or **Start**: move one level up
-- Press **Back**, or move the BUSY Bar mode switch: close the app
+- Turn the dial to move one level.
+- **OK** or **Start** moves one level up.
+- **Back**, moving the mode switch, or closing the window stops it.
 
-You can start Social Battery in **Off** mode (Apps mode is not required).
-Moving the mode switch afterward stops the app.
-
-The state stops at **critical** and **full**; it does not wrap around.
-
-## Stopping the app
-
-Press **Back** on the BUSY Bar, move the mode switch, close the launcher
-window, or press `Ctrl+C` in the terminal. The app clears its artwork when it
-closes.
-
-## Troubleshooting
-
-### The BUSY Bar cannot be reached
-
-- Check the USB cable or Wi-Fi connection.
-- Confirm the IP address.
-- For Wi-Fi, confirm HTTP API access is enabled.
-- Try the USB address `10.0.4.20`.
-
-### The Wi-Fi access password is rejected
-
-Check the BUSY Bar's HTTP API access settings and enter its password when
-prompted. This password is only used for protected access over Wi-Fi.
-
-### The dial does not respond
-
-- Close any other computer app using the BUSY Bar status stream.
-- Stop and restart Social Battery.
-
-### Python is not found
-
-Install Python 3.10 or newer from
-[python.org](https://www.python.org/downloads/), then reopen the launcher.
-
-## Files included
-
-- `social_battery.py` — the complete app in one Python file
-- `assets` — the seven social-battery PNG images
-- `requirements.txt` — Python packages
-- `Start Here` — clearly labelled macOS and Windows launchers
-
-## License
-
-Social Battery and its included artwork are available under the repository's
-[MIT License](../../LICENSE).
+It stops at **critical** and **full**. It does not wrap around.
