@@ -15,17 +15,17 @@ mode switch on **Off**.
 
 | App | Folder | What it does |
 |-----|--------|----------------|
-| [Network](On%20your%20computer/Network/) | `On your computer/Network` | Shows this computer’s download and upload speed |
-| [Social Battery](On%20your%20computer/Social%20Battery/) | `On your computer/Social Battery` | Dial to show how social you feel |
+| [Network](Computer%20run%20apps/Network/) | `Computer run apps/Network` | Shows this computer’s download and upload speed |
+| [Social Battery](Computer%20run%20apps/Social%20Battery/) | `Computer run apps/Social Battery` | Dial to show how social you feel |
 
 **The app stays on the bar.** Install once. Then open it from **Apps** on the
 bar. The computer can be unplugged after that.
 
 | App | Folder | What it does |
 |-----|--------|----------------|
-| [Chess Clock](On%20the%20bar/Chess%20Clock/) | `On the bar/Chess Clock` | Two-player timer |
-| [Dice](On%20the%20bar/Dice/) | `On the bar/Dice` | Roll 1 to 4 dice |
-| [Social Battery](On%20the%20bar/Social%20Battery/) | `On the bar/Social Battery` | Same idea as above, but it stays on the bar |
+| [Chess Clock](On%20Bar%20apps/Chess%20Clock/) | `On Bar apps/Chess Clock` | Two-player timer |
+| [Dice](On%20Bar%20apps/Dice/) | `On Bar apps/Dice` | Roll 1 to 4 dice |
+| [Social Battery](On%20Bar%20apps/Social%20Battery/) | `On Bar apps/Social Battery` | Same idea as above, but it stays on the bar |
 
 These three need a bar that already has a **JavaScript runner**. BUSY’s own
 site still says putting your own apps on the bar is coming soon. If the app
@@ -36,7 +36,7 @@ instead. Social Battery is in both lists so you can pick the one that works.
 
 1. On this GitHub page, click the green **Code** button, then **Download ZIP**.
 2. Unzip the download.
-3. Open **On your computer** or **On the bar**, then open the app folder from the table.
+3. Open **Computer run apps** or **On Bar apps**, then open the app folder from the table.
 4. Open **Start Here**.
 5. Mac: double-click the file that says **macOS**. The first time, you may
    need to right-click it and choose **Open**.
@@ -78,7 +78,7 @@ app, or `python3 install_on_bar.py` for an app that stays on the bar. Add
 
 ## For people building apps
 
-Notes for an AI assistant are in [For AI helpers](For%20AI%20helpers/skills/BUSY-BAR-CORE.md).
+Notes for an AI assistant are in [Agent skills](Agent%20skills/BUSY-BAR-CORE.md).
 
 These are community projects, not official BUSY apps. The license is
 [MIT](LICENSE).

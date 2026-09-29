@@ -16,13 +16,13 @@ Host widgets in this repo still run on the PC. JS apps run **on the bar**.
 
 Worked examples:
 
-- Chess Clock: `On the bar/Chess Clock/on-device/community.chess_clock/`
-- Dice: `On the bar/Dice/on-device/community.dice/`
-- Social Battery: `On the bar/Social Battery/on-device/community.social_battery/`
+- Chess Clock: `On Bar apps/Chess Clock/on-device/community.chess_clock/`
+- Dice: `On Bar apps/Dice/on-device/community.dice/`
+- Social Battery: `On Bar apps/Social Battery/on-device/community.social_battery/`
 
-Computer apps live under `On your computer/` (Network, and a computer Social
+Computer apps live under `Computer run apps/` (Network, and a computer Social
 Battery). Chess Clock’s installer is self-contained. Dice and Social Battery
-use `On the bar/Install helper/install_js_app.py`.
+use `On Bar apps/Install helper/install_js_app.py`.
 
 Apps that need a live process on the computer, such as network speeds, stay
 computer apps.
@@ -156,7 +156,7 @@ on-device).
 Python installer in this repo:
 
 ```bash
-cd "On the bar/Chess Clock"
+cd "On Bar apps/Chess Clock"
 python install_on_bar.py --host 10.0.4.20
 ```
 
@@ -288,7 +288,7 @@ sysctl debug 1
 
 ## Related
 
-- Lessons: `For AI helpers/lessons/06-js-apps-on-device.md`,
-  `For AI helpers/lessons/07-setup-settings-and-launch.md`
-- Example on-device: `On the bar/Chess Clock/`
-- Host widgets: `On your computer/` and `For AI helpers/skills/busy-bar-widgets/SKILL.md`
+- Lessons: `Agent skills/lessons/06-js-apps-on-device.md`,
+  `Agent skills/lessons/07-setup-settings-and-launch.md`
+- Example on-device: `On Bar apps/Chess Clock/`
+- Host widgets: `Computer run apps/` and `Agent skills/busy-bar-widgets/SKILL.md`

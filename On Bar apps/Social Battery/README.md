@@ -5,7 +5,7 @@ it, it stays on the bar.
 
 It needs the JavaScript runner described in the
 [main instructions](../../README.md). If your bar does not have that, use the
-[computer version](../../On%20your%20computer/Social%20Battery/) instead. That one
+[computer version](../../Computer%20run%20apps/Social%20Battery/) instead. That one
 works on a normal BUSY Bar, but the computer has to stay connected.
 
 ## Install

@@ -2,15 +2,15 @@
 
 This is a different kind of app from the Python host widgets.
 
-- **Host widget** (`On your computer/`): code runs on your computer and talks to
+- **Host widget** (`Computer run apps/`): code runs on your computer and talks to
   the bar over HTTP.
-- **JS app** (`On the bar/`): you upload files **onto the bar**. The bar runs the
+- **JS app** (`On Bar apps/`): you upload files **onto the bar**. The bar runs the
   JavaScript itself, and the app shows up in the Apps menu.
 
 Official docs still say the JS SDK is coming soon. This is for firmware that
 already has a JS runner.
 
-Worked examples: Chess Clock, Dice, and Social Battery under `On the bar/`.
+Worked examples: Chess Clock, Dice, and Social Battery under `On Bar apps/`.
 
 ## When to use which
 
@@ -23,14 +23,14 @@ app to live on the bar after a one-time install.
 ## Repo layout
 
 ```
-On the bar/                  apps that stay on the bar
+On Bar apps/                  apps that stay on the bar
   Chess Clock/on-device/community.chess_clock/
   Dice/on-device/community.dice/
   Social Battery/on-device/community.social_battery/
   Install helper/install_js_app.py
-On your computer/             apps that stay on the computer
+Computer run apps/             apps that stay on the computer
   Network/  Social Battery/
-For AI helpers/               lessons and skills
+Agent skills/               lessons and skills
 ```
 
 ## Package
@@ -65,7 +65,7 @@ DELETE /api/assets/upload?application_name=<id>   # wipe before re-install
 Body = raw file bytes. Shared helper:
 
 ```bash
-cd "On the bar/Chess Clock"
+cd "On Bar apps/Chess Clock"
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -127,4 +127,4 @@ frame may flash and dump you back to the launcher.
 
 Next: [07-setup-settings-and-launch.md](07-setup-settings-and-launch.md).
 
-Skill detail: `For AI helpers/skills/busy-bar-js-apps/SKILL.md`.
+Skill detail: `Agent skills/busy-bar-js-apps/SKILL.md`.

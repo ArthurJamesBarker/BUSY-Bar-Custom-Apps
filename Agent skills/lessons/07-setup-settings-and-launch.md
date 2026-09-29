@@ -94,15 +94,15 @@ with the background full-bleed behind them.
 
 ## Checklist for a new ported app
 
-1. Package under `On the bar/<Name>/on-device/<id>/`.
+1. Package under `On Bar apps/<Name>/on-device/<id>/`.
 2. `"debug": false` unless it should stay hidden.
 3. Prefer Setup for user preferences; open Start into the real UI.
 4. Read settings via `/api/storage/read` on the jsrunner settings path.
 5. `install_on_bar.py` + enable `js_apps_enabled`.
-6. Document Install in `On the bar/…`. Keep computer apps under `On your computer/`.
+6. Document Install in `On Bar apps/…`. Keep computer apps under `Computer run apps/`.
 
 ## See also
 
 - [06-js-apps-on-device.md](06-js-apps-on-device.md)
-- `For AI helpers/skills/busy-bar-js-apps/SKILL.md`
-- Examples: `On the bar/Chess Clock/`, `On the bar/Dice/`, `On the bar/Social Battery/`
+- `Agent skills/busy-bar-js-apps/SKILL.md`
+- Examples: `On Bar apps/Chess Clock/`, `On Bar apps/Dice/`, `On Bar apps/Social Battery/`

@@ -57,5 +57,5 @@ import { BusyBar } from '@busy-app/busy-lib';
 
 ## Longer lessons
 
-- `For AI helpers/lessons/03-http-api-basics.md`
-- `For AI helpers/lessons/05-draw-and-assets.md`
+- `Agent skills/lessons/03-http-api-basics.md`
+- `Agent skills/lessons/05-draw-and-assets.md`

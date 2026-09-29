@@ -49,4 +49,4 @@ Colour: `#RRGGBBAA`.
 
 ## Longer lesson
 
-See `For AI helpers/lessons/04-fonts-and-displays.md` in this repository.
+See `Agent skills/lessons/04-fonts-and-displays.md` in this repository.

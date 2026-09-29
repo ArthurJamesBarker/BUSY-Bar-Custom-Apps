@@ -3,7 +3,7 @@
 Plain Markdown for any assistant. Paste or upload.
 
 1. Open [BUSY-BAR-CORE.md](BUSY-BAR-CORE.md), copy, paste into a new chat.
-2. Optionally add a topic skill below, or a lesson from [`../lessons/`](../lessons/).
+2. Optionally add a topic skill below, or a lesson from [lessons](lessons/).
 
 | Skill | Use when |
 |-------|----------|
